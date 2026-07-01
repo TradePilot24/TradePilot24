@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TradePilot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>TradePilot</h1>
+    <p class="sub">BTC/ETH Risiko-Rechner</p>
+
+    <section class="card">
+      <label>Coin</label>
+      <select id="coin">
+        <option>BTC</option>
+        <option>ETH</option>
+      </select>
+
+      <label>Richtung</label>
+      <div class="row">
+        <button id="longBtn" class="active">Long</button>
+        <button id="shortBtn">Short</button>
+      </div>
+
+      <label>Kontogröße (€)</label>
+      <input id="balance" type="number" value="300">
+
+      <label>Risiko pro Trade (%)</label>
+      <input id="risk" type="number" value="2">
+
+      <label>Hebel</label>
+      <input id="leverage" type="number" value="10">
+
+      <label>Einstieg</label>
+      <input id="entry" type="number" value="100000">
+
+      <label>Stop-Loss</label>
+      <input id="stop" type="number" value="99000">
+
+      <button class="primary" onclick="calculate()">Berechnen</button>
+    </section>
+
+    <section class="card">
+      <h2>Ergebnis</h2>
+      <p>Max. Verlust: <b id="loss">–</b></p>
+      <p>Stop-Abstand: <b id="distance">–</b></p>
+      <p>Positionsgröße: <b id="position">–</b></p>
+      <p>Benötigte Margin: <b id="margin">–</b></p>
+      <p>Take Profit 1:2: <b id="tp2">–</b></p>
+      <p>Take Profit 1:3: <b id="tp3">–</b></p>
+      <p>Status: <b id="status">–</b></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
